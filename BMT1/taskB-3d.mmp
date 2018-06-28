@@ -1,0 +1,76 @@
+GeoSys-MMP  Material Medium Properties ------------------------------------
+#MEDIUM_PROPERTIES // left intact material OPA
+ $GEOMETRY_DIMENSION
+  3
+ $POROSITY
+  1  0.20
+ $PERMEABILITY_TENSOR
+ ISOTROPIC  1.e-27
+ $STORAGE
+  1 2.62479E-12 // see xls file, calculated with incompressible grain and pores, porosity 0.2
+
+#MEDIUM_PROPERTIES // left damage zone
+ $GEOMETRY_DIMENSION
+ 3
+ $POROSITY
+  1  0.20
+ $PERMEABILITY_TENSOR
+ ISOTROPIC  1.e-27
+ $STORAGE
+  1 2.62479E-12
+
+#MEDIUM_PROPERTIES // fault, use 13 1 4 5 for FM1, 14 1 4 5 for FM2, 1 4 5 are 3 curves defined in .rfd, porosity model 7 curve 7 function mean stress
+ $GEOMETRY_DIMENSION
+  3
+ $POROSITY
+  1 0.000473 // frac thickness is 4 elements, total thickness of 2.33*sin(dip angle) cm (perp to fault)
+ $PERMEABILITY_TENSOR
+ ISOTROPIC  8.333333e-27  
+ $PERMEABILITY_FUNCTION_EFFSTRESS ; curve number defines the relationship permeability --- minimum principal stress
+ 16 1 6 6 0.02331
+ $STORAGE ; water compressibility / (rho*g)
+  1 4.4852191641182466870540265035678e-14
+
+#MEDIUM_PROPERTIES // right damage zone
+ $GEOMETRY_DIMENSION
+  3
+ $POROSITY
+  1  0.2
+ $PERMEABILITY_TENSOR
+ ISOTROPIC  1.e-27
+ $STORAGE
+  1 2.62479E-12
+#MEDIUM_PROPERTIES //right intact material OPA
+ $GEOMETRY_DIMENSION
+ 3
+ $POROSITY
+  1  0.2
+ $PERMEABILITY_TENSOR
+ ISOTROPIC  1.e-27
+ $STORAGE
+  1 2.62479E-12 
+  
+#STOP
+  
+#MEDIUM_PROPERTIES ;WELL
+ $GEOMETRY_DIMENSION
+ 3
+ $POROSITY
+  1  0.0
+ $PERMEABILITY_TENSOR
+ ISOTROPIC  1.e-20
+ $PERMEABILITY_FUNCTION_STRAIN
+ 13 1 4 5
+ $STORAGE
+  1 5.e-12  
+
+  $PERMEABILITY_FUNCTION_STRAIN
+ 13 1 4 5
+  
+ $PERMEABILITY_FUNCTION_STRAIN
+ 13 1 4 7
+
+$PERMEABILITY_FUNCTION_STRAIN
+ 12 1 4 5
+ $PERMEABILITY_FUNCTION_STRAIN
+ 12 4.64159e-5 3 4
