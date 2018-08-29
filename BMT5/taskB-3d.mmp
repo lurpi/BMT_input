@@ -29,9 +29,9 @@ GeoSys-MMP  Material Medium Properties ------------------------------------
  $PERMEABILITY_FUNCTION_EFFSTRESS ; curve number defines the relationship permeability --- minimum principal stress
  32 1 6 6 0.02331
  $STORAGE ; water compressibility / (rho*g) + fracture compressibility (1/Kn)
-  1 4.4852191641182466870540265035678e-14; 2.145e-9 
- $STOR_FUNCTION_PRESSPLAS
- 32 7  
+  1 2.145e-9 
+ ;$STOR_FUNCTION_PRESSPLAS
+ ;32 7  
 
 #MEDIUM_PROPERTIES // right damage zone
  $GEOMETRY_DIMENSION
