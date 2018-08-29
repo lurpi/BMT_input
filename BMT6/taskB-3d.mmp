@@ -30,8 +30,8 @@ GeoSys-MMP  Material Medium Properties ------------------------------------
  32 1 6 5 0.02331
  $STORAGE ; water compressibility / (rho*g) + fracture compressibility (1/Kn)
   1 2.145e-9 ; 4.4852191641182466870540265035678e-14
- $STOR_FUNCTION_PRESSPLAS
- 32 7  
+ ;$STOR_FUNCTION_PRESSPLAS
+ ;32 7  
 
 #MEDIUM_PROPERTIES // right damage zone
  $GEOMETRY_DIMENSION
