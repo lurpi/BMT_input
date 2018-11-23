@@ -127,6 +127,6 @@ with open(fname, 'r') as grid: # 'r' = read 'rU' read UNIVERSAL EOL
        print line   
        out_mesh=out_mesh+'\n'+out
 """
-f = open(fname[0:-5]+'_xcorrectP2P3.mesh', 'w') # 'r' = read
+f = open(outname, 'w') # 'r' = read
 f.write(out)
 f.close()
