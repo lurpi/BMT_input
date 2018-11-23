@@ -6,11 +6,8 @@ Created on Tue Oct 03 13:45:57 2017
 """
 import numpy as np
 
-#set TOUGH2 groups and boundaries (very large volumes) to elements 
-#
-
-
-#known number of element in the mesh
+fname='0_mesh.msh' #input filename
+outname='FM_3d_extrusion_spacing_corrected.mesh' #output filename
 
 def read_NODES(name_mesh):
  file_grid=name_mesh
@@ -66,7 +63,7 @@ def create_new_MESH(name_mesh, nnodes):
        out_mesh=out_mesh+out
  return out_mesh
 
-fname='FM_3d_rerefined_wellP2P3.mesh'
+
 nodes=read_NODES(fname)
 new_nodes={}
 new_x = {0 : 0,
