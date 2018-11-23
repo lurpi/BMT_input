@@ -9,4 +9,5 @@ To create the gmsh mesh, simply download the .geo and run
 then download in the same folder the 2 python scripts and  execute them
 
 > python 1_extrusion.py
+
 > python 2_gmesh_to_ogs.py
